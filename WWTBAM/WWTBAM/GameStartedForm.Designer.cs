@@ -35,6 +35,8 @@
             this.answerD = new System.Windows.Forms.Button();
             this.questionLabel = new System.Windows.Forms.Label();
             this.answersLabel = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // questionNumberLabel
@@ -49,7 +51,7 @@
             // 
             // answerA
             // 
-            this.answerA.Location = new System.Drawing.Point(115, 319);
+            this.answerA.Location = new System.Drawing.Point(47, 28);
             this.answerA.Name = "answerA";
             this.answerA.Size = new System.Drawing.Size(75, 23);
             this.answerA.TabIndex = 1;
@@ -58,7 +60,7 @@
             // 
             // answerB
             // 
-            this.answerB.Location = new System.Drawing.Point(267, 319);
+            this.answerB.Location = new System.Drawing.Point(160, 28);
             this.answerB.Name = "answerB";
             this.answerB.Size = new System.Drawing.Size(75, 23);
             this.answerB.TabIndex = 2;
@@ -68,7 +70,7 @@
             // 
             // answerC
             // 
-            this.answerC.Location = new System.Drawing.Point(115, 390);
+            this.answerC.Location = new System.Drawing.Point(47, 80);
             this.answerC.Name = "answerC";
             this.answerC.Size = new System.Drawing.Size(75, 23);
             this.answerC.TabIndex = 3;
@@ -77,7 +79,7 @@
             // 
             // answerD
             // 
-            this.answerD.Location = new System.Drawing.Point(267, 390);
+            this.answerD.Location = new System.Drawing.Point(160, 80);
             this.answerD.Name = "answerD";
             this.answerD.Size = new System.Drawing.Size(75, 23);
             this.answerD.TabIndex = 4;
@@ -104,20 +106,32 @@
             this.answersLabel.TabIndex = 6;
             this.answersLabel.Text = "Answers";
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.answerA);
+            this.groupBox1.Controls.Add(this.answerB);
+            this.groupBox1.Controls.Add(this.answerD);
+            this.groupBox1.Controls.Add(this.answerC);
+            this.groupBox1.Location = new System.Drawing.Point(87, 331);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(287, 127);
+            this.groupBox1.TabIndex = 7;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "groupBox1";
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
             // GameStartedForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(465, 501);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.answersLabel);
             this.Controls.Add(this.questionLabel);
-            this.Controls.Add(this.answerD);
-            this.Controls.Add(this.answerC);
-            this.Controls.Add(this.answerB);
-            this.Controls.Add(this.answerA);
             this.Controls.Add(this.questionNumberLabel);
             this.Name = "GameStartedForm";
             this.Text = "GameStartedForm";
+            this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -132,5 +146,6 @@
         private System.Windows.Forms.Button answerD;
         private System.Windows.Forms.Label questionLabel;
         private System.Windows.Forms.Label answersLabel;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }
