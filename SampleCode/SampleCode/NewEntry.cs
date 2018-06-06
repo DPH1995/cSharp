@@ -23,11 +23,13 @@ namespace SampleCode
         {
             if (textBox1.Text != "")
             {
-                var fileName = textBox1.Text;
+               
+                String fileName = textBox1.Text;
+                fileName = fileName.Replace(" ", "_");
                 File.WriteAllText(fileName, textBox3.Text);
                 MessageBox.Show("Sample Code saved! as " + fileName + ".txt");
-                Process.Start("notepad.exe", fileName);
-
+                // Process.Start("notepad.exe", fileName);
+                File.AppendAllText("library2.txt", fileName + Environment.NewLine);
             } else
             {
                 MessageBox.Show("You must enter a title!");
@@ -38,5 +40,9 @@ namespace SampleCode
         {
             textBox3.Text = "";
         }
+
+        
     }
+
+
 }
