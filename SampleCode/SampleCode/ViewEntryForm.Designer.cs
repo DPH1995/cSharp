@@ -1,6 +1,6 @@
 ﻿namespace SampleCode
 {
-    partial class Form1
+    partial class ViewEntryForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,48 +28,71 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
+            // listBox1
+            // 
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.Location = new System.Drawing.Point(26, 13);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(140, 407);
+            this.listBox1.TabIndex = 0;
+            this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(192, 12);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(486, 412);
+            this.textBox1.TabIndex = 1;
+            // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(84, 67);
+            this.button1.Location = new System.Drawing.Point(192, 430);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(345, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "View Entries";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "Edit entry";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(84, 118);
+            this.button2.Location = new System.Drawing.Point(603, 430);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(345, 23);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "New Entry";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 3;
+            this.button2.Text = "Back";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // Form1
+            // ViewEntryForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(515, 346);
+            this.ClientSize = new System.Drawing.Size(690, 468);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
-            this.Name = "Form1";
-            this.Text = "SampleCode";
-            this.Load += new System.EventHandler(this.Form1_Load);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.listBox1);
+            this.Name = "ViewEntryForm";
+            this.Text = "View Entries";
+            this.Load += new System.EventHandler(this.ViewEntryForm_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
+        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
     }
 }
-

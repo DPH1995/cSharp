@@ -14,9 +14,11 @@ namespace SampleCode
 {
     public partial class NewEntry : Form
     {
+        Font notePadFont = new Font("Consolas", 11.0f);
         public NewEntry()
         {
             InitializeComponent();
+            initializeFonts();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -24,12 +26,12 @@ namespace SampleCode
             if (textBox1.Text != "")
             {
                
+                textBox1.Font = notePadFont;
                 String fileName = textBox1.Text;
-                fileName = fileName.Replace(" ", "_");
                 File.WriteAllText(fileName, textBox3.Text);
                 MessageBox.Show("Sample Code saved! as " + fileName + ".txt");
-                // Process.Start("notepad.exe", fileName);
-                File.AppendAllText("library2.txt", fileName + Environment.NewLine);
+               
+                File.AppendAllText("library.txt", fileName + Environment.NewLine);
             } else
             {
                 MessageBox.Show("You must enter a title!");
@@ -38,10 +40,16 @@ namespace SampleCode
 
         private void button2_Click(object sender, EventArgs e)
         {
-            textBox3.Text = "";
+            textBox3.Text = "/*      */";
         }
 
-        
+        private void initializeFonts()
+        {
+            textBox1.Font = notePadFont;
+            textBox2.Font = notePadFont;
+            textBox3.Font = notePadFont;
+            textBox3.Text = "/*      */";
+        }
     }
 
 

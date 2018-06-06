@@ -30,7 +30,10 @@ namespace SampleCode
             newEntry.ShowDialog();
         }
 
-      
-        
+        private void button1_Click(object sender, EventArgs e)
+        {
+            ViewEntryForm viewEntryForm = new ViewEntryForm();
+            viewEntryForm.ShowDialog();
+        }
     }
 }
