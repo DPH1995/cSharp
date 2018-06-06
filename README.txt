@@ -3,6 +3,12 @@ Information about files in this repository:
 
 PERSONAL PROJECTS -
 
+'SampleCode'
+SampleCode is a code snipped program I am developing for myself to use in the workplace or anytime I find fitting. The program allows the
+user to create entries where they can save a snippet of code. These snippets are saved and can be loaded from the application to view whenever
+the user wants. V2 of this application will expand on the existing functionality and introduce directory management/sorting.
+
+
 'PkmnSimulator'
 This is a C# application that uses Windows forms and the .NET framework. The application itself is a battle simulator for the game 'pokemon'
 Currently, accounts can be registered and loaded from text files. Accounts have stored values which are manipulated throughout the application.
