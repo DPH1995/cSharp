@@ -25,9 +25,27 @@ namespace SampleCode
         {
             if (textBox1.Text != "")
             {
-               
+                string fileName = textBox1.Text;
+                string language = textBox2.Text;
+
+                using (StreamWriter w = File.AppendText("languages.txt"))
+                {
+                    w.WriteLine(language);
+                }
+
+                if (language != "")
+                {
+
+                    using (StreamWriter w = File.AppendText(language + ".txt"))
+                    {
+                        w.WriteLine(fileName);
+                    }
+                }
+
+
+
                 textBox1.Font = notePadFont;
-                String fileName = textBox1.Text;
+            
                 File.WriteAllText(fileName, textBox3.Text);
                 MessageBox.Show("Sample Code saved! as " + fileName + ".txt");
                
@@ -50,6 +68,13 @@ namespace SampleCode
             textBox3.Font = notePadFont;
             textBox3.Text = "/*      */";
         }
+
+        private void textBox3_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        
     }
 
 

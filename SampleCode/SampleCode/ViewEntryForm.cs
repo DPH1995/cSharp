@@ -16,17 +16,28 @@ namespace SampleCode
     {
         public Object selectedSample;
         public string selected;
+        public string sselectedLanguage;
         Font notePadFont = new Font("Consolas", 11.0f);
         Font notePadFont2 = new Font("Consolas", 8.0f);
+       
         
-        
-        List<string> fileNameList = new List<string>();
+     
+        List<string> languageList = new List<string>();
         public ViewEntryForm()
         {
+
             InitializeComponent();
+            var selectedLanguage = comboBox1.SelectedItem;
             listBox1.Font = notePadFont2;
-            populateList();
+            populateComboBox();
+            comboBox1.SelectedIndexChanged += ComboBox1_SelectedIndexChanged;
            
+        }
+
+        private void ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var newSelected = comboBox1.SelectedItem;
+            populateComboBox();
         }
 
         private void ViewEntryForm_Load(object sender, EventArgs e)
@@ -36,7 +47,8 @@ namespace SampleCode
 
         private void populateList()
         {
-            string[] fileNames = File.ReadAllLines("library.txt");
+            List<string> fileNameList = new List<string>();
+            string[] fileNames = File.ReadAllLines(sselectedLanguage + ".txt");
             foreach(var str in fileNames)
             {
                 fileNameList.Add(str);
@@ -44,6 +56,26 @@ namespace SampleCode
             listBox1.DataSource = fileNameList;
         }
 
+        private void populateComboBox()
+        {
+
+            string[] languages = File.ReadAllLines("languages.txt");
+            foreach (var str in languages)
+            {
+                languageList.Add(str);
+            }
+            comboBox1.DataSource = languageList;
+            var selectedLanguage = comboBox1.SelectedItem;
+            sselectedLanguage = selectedLanguage.ToString();
+
+            populateList();
+        }
+
+       
+
+      
+       
+        
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             selectedSample = listBox1.SelectedItem;
@@ -67,6 +99,11 @@ namespace SampleCode
             this.Close();
         }
 
-        
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+       
     }
 }
